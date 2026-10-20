@@ -38,7 +38,7 @@
         @keyframes hide { to { opacity: 0; } }
       </style>
       <p class="terminal line1">&gt; <span class="typed t1">No matter where you are.</span><span class="cursor c1">_</span></p>
-      <p class="terminal line2">&gt; <span class="typed t2">Everyone is always connected.</span><span class="cursor c2">_</span></p>
+      <span class="typed t2">Everyone is always connected.</span><span class="cursor c2">_</span></p>
       <div class="scanlines"></div>
     </div>
   </foreignObject>
