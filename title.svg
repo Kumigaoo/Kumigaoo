@@ -25,21 +25,41 @@
         .t2 { animation: type2 2.4s steps(29) 2.6s forwards; }
         .cursor { opacity: 0; }
         .c1 { animation: blink 0.8s linear infinite, hide 0.01s linear 2.5s forwards; }
-        .c2 { animation: blink 0.8s linear 2.6s infinite; }
-        .scanlines {
+        .c2 { animation: blink 0.8s linear 2.5s infinite; }
+
+        .prompt2 {
+          opacity: 0;
+          animation: show 0.01s linear 2.5s forwards;
+        }
+
+        .terminal__interlaced {
           position: absolute;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: repeating-linear-gradient(transparent 0px 1px, rgba(0,0,0,0.3) 3px 4px);
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: repeating-linear-gradient(transparent 0px 1px, hsl(154 0% 0% / 0.3) 3px 4px);
+          background-size: 100% 4px;
+          z-index: 10;
           pointer-events: none;
+          animation: lines 0.0666666666s linear infinite;
+        }
+
+        @keyframes lines {
+          0%   { background-position: 0px 0px; }
+          50%  { background-position: 0px 0px; }
+          51%  { background-position: 0px 2px; }
+          100% { background-position: 0px 2px; }
         }
         @keyframes type1 { from { width: 0; } to { width: 24ch; } }
         @keyframes type2 { from { width: 0; } to { width: 29ch; } }
         @keyframes blink { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
         @keyframes hide { to { opacity: 0; } }
+        @keyframes show { to { opacity: 1; } }
       </style>
       <p class="terminal line1">&gt; <span class="typed t1">No matter where you are.</span><span class="cursor c1">_</span></p>
-      <span class="typed t2">Everyone is always connected.</span><span class="cursor c2">_</span></p>
-      <div class="scanlines"></div>
+      <p class="terminal line2"><span class="prompt2">&gt; </span><span class="typed t2">Everyone is always connected.</span><span class="cursor c2">_</span></p>
+      <div class="terminal__interlaced"></div>
     </div>
   </foreignObject>
 </svg>
