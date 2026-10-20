@@ -1,80 +1,36 @@
-<svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
-    <foreignObject width="100%" height="100%">
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <style>
-              .terminal__prompt {
-                white-space: pre-wrap;
-              }
-              .terminal__title {
-                margin-top: 40px;
-                opacity: 90%;
-                margin-bottom: 0px;
-                font-size: 1.5em;
-              }
-              .terminal {
-                color: hsl(154 84% 70%);
-                text-shadow: 0 0 4px hsl(154 84% 70%);
-              }
-              .terminal__wrap {
-                flex-wrap: wrap;
-              }
-              .terminal__cursor {
-                animation: blink 0.4s linear infinite;
-              }
-              .terminal__glare {
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: -1;
-              }
-                            
-              @keyframes lines {
-                0% {
-                  background-position: 0px 0px;
-                }
-                50% {
-                  background-position: 0px 0px;
-                }
-                51% {
-                  background-position: 0px 2px;
-                }
-                100% {
-                  background-position: 0px 2px;
-                }
-              }
-              
-              .terminal__interlaced {
-                position: fixed;
-                background: repeating-linear-gradient(transparent 0px 1px, hsl(154 0% 0% / 0.3) 3px 4px);
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: 10;
-                pointer-events: none;
-                animation: lines 0.0666666666s linear infinite;
-              }
-              
-              @keyframes blink {
-                0% {
-                  opacity: 0;
-                }
-                30% {
-                  opacity: 1;
-                }
-                70% {
-                  opacity: 1;
-                }
-                100% {
-                  opacity: 0;
-                }
-              }
-            </style>
-          <p class="terminal__prompt">&gt;<span #commandInput class="terminal__input"></span><span class="terminal__cursor" >_</span>
-          </p>
-          <div class="terminal__interlaced"></div>
-        </div>
-    </foreignObject>
+<svg fill="none" viewBox="0 0 400 100" width="400" height="100" xmlns="http://www.w3.org/2000/svg">
+  <foreignObject width="400" height="100">
+    <div xmlns="http://www.w3.org/1999/xhtml" style="position:relative;width:400px;height:100px;background:#0b0f0d;overflow:hidden;">
+      <style>
+        .terminal {
+          font-family: ui-monospace, Menlo, Consolas, monospace;
+          font-size: 28px;
+          color: hsl(154, 84%, 70%);
+          text-shadow: 0 0 4px hsl(154, 84%, 70%);
+          margin: 0;
+          padding: 28px 24px;
+          white-space: nowrap;
+        }
+        .typed {
+          display: inline-block;
+          overflow: hidden;
+          vertical-align: bottom;
+          white-space: nowrap;
+          width: 0;
+          animation: typing 2s steps(10) 0.5s forwards;
+        }
+        .cursor { animation: blink 0.8s linear infinite; }
+        .scanlines {
+          position: absolute;
+          top: 0; left: 0; right: 0; bottom: 0;
+          background: repeating-linear-gradient(transparent 0px 1px, rgba(0,0,0,0.3) 3px 4px);
+          pointer-events: none;
+        }
+        @keyframes typing { from { width: 0; } to { width: 10ch; } }
+        @keyframes blink { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
+      </style>
+      <p class="terminal">&gt; <span class="typed">my-project</span><span class="cursor">No matter where you are. Everyone is always connected.</span></p>
+      <div class="scanlines"></div>
+    </div>
+  </foreignObject>
 </svg>
