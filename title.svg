@@ -73,8 +73,8 @@
               }
             </style>
           <p class="terminal__prompt">&gt;<span #commandInput class="terminal__input"></span><span class="terminal__cursor" >_</span>
-          <div class="terminal__interlaced"></div>
           </p>
+          <div class="terminal__interlaced"></div>
         </div>
     </foreignObject>
 </svg>
