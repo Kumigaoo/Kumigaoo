@@ -29,7 +29,7 @@
         @keyframes typing { from { width: 0; } to { width: 10ch; } }
         @keyframes blink { 0%, 100% { opacity: 0; } 30%, 70% { opacity: 1; } }
       </style>
-      <p class="terminal">&gt; <span class="typed">my-project</span><span class="cursor">No matter where you are. Everyone is always connected.</span></p>
+      <p class="terminal">&gt; <span class="typed">No matter where you are. Everyone is always connected.</span><span class="cursor">_</span></p>
       <div class="scanlines"></div>
     </div>
   </foreignObject>
